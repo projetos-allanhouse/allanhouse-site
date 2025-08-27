@@ -1,0 +1,83 @@
+:root{
+  --primary-color:#005A9C;
+  --secondary-color:#F7F9FC;
+  --text-color:#333;
+  --header-color:#FFFFFF;
+  --accent-color:#FFC107;
+  --module-color-1:#E38D33;
+  --module-color-2:#006970;
+  --module-color-3:#004059;
+}
+
+/* Reset básico */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+html{scroll-behavior:smooth}
+body{line-height:1.6;color:var(--text-color);background-color:var(--secondary-color)}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+.section-title{text-align:center;font-size:2.5rem;margin-bottom:50px;color:var(--primary-color)}
+
+/* Cabeçalho / Nav */
+header{background:var(--header-color);padding:1rem 0;box-shadow:0 2px 4px rgba(0,0,0,0.1);position:sticky;top:0;z-index:1000}
+header .container{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:bold;color:var(--primary-color);text-decoration:none}
+.main-nav ul{list-style:none;display:flex;gap:20px}
+.main-nav a{text-decoration:none;color:var(--text-color);font-weight:500;transition:color .3s ease}
+.main-nav a:hover{color:var(--primary-color)}
+
+/* Hero */
+#hero{
+  background:linear-gradient(rgba(0,90,156,.8),rgba(0,90,156,.8)),
+    url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format=fit=crop&w=1170&q=80') center/cover no-repeat;
+  color:#fff;text-align:center;min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 20px
+}
+#hero h1{font-size:3rem;margin-bottom:20px}
+#hero p{font-size:1.2rem;max-width:600px;margin-bottom:30px}
+.cta-button{background-color:var(--accent-color);color:var(--text-color);padding:15px 30px;text-decoration:none;border-radius:5px;font-weight:bold;transition:transform .3s ease,background-color .3s ease}
+.cta-button:hover{transform:translateY(-3px);background-color:#ffca2c}
+
+/* Estatísticas */
+#education-stats{background-color:#fff}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:center}
+.stat-card{background:var(--secondary-color);padding:25px;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.05)}
+.stat-card .stat-number{font-size:2.5rem;font-weight:bold;color:var(--primary-color);margin-bottom:10px}
+.stat-card .stat-description{font-size:1rem;color:#555}
+
+/* Sobre */
+#about{background-color:var(--secondary-color)}
+.about-text{text-align:center;max-width:800px;margin:0 auto}
+
+/* Módulos */
+#modules{background-color:#fff}
+.modules-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:0;border-radius:10px;overflow:hidden;box-shadow:0 10px 20px rgba(0,0,0,.1)}
+.module-card{padding:40px;color:#fff;flex:1;min-width:280px}
+.module-card .icon{font-size:3.5rem;margin-bottom:20px}
+.module-card h3{font-family:'Georgia',serif;font-size:2rem;margin-bottom:20px;text-transform:uppercase}
+.module-card p{font-size:1rem;line-height:1.7}
+.module-card.secretaria{background-color:var(--module-color-1)}
+.module-card.professores{background-color:var(--module-color-2)}
+.module-card.alunos{background-color:var(--module-color-3)}
+
+/* Funcionalidades */
+#features{background-color:var(--secondary-color)}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;text-align:center}
+.feature-link{text-decoration:none;color:inherit;display:flex}
+.feature-card{background:var(--header-color);padding:30px;border-radius:8px;border:1px solid #e0e0e0;transition:transform .3s ease,box-shadow .3s ease;width:100%}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 6px 15px rgba(0,0,0,.1)}
+.feature-card .icon{font-size:3rem;color:var(--primary-color);margin-bottom:15px}
+.feature-card h3{font-size:1.5rem;margin-bottom:10px}
+
+/* CTA + rodapé */
+#cta{background-color:var(--primary-color);color:#fff;text-align:center;padding:100px 20px}
+#cta h2{font-size:2.8rem;margin-bottom:20px}
+#cta p{font-size:1.2rem;margin-bottom:40px}
+.large-cta-button{background-color:var(--accent-color);color:var(--text-color);padding:20px 40px;font-size:1.2rem;border-radius:50px}
+.large-cta-button:hover{background-color:#fff;color:var(--primary-color)}
+footer{background-color:#222;color:#fff;text-align:center;padding:30px 0}
+
+/* Responsividade */
+@media (max-width:768px){
+  #hero h1{font-size:2.5rem}
+  header .container{flex-direction:column;gap:15px}
+  .modules-grid,.features-grid{grid-template-columns:1fr}
+}
